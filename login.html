@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="the latest trends in fashion at our online clothing store! Shop a curated selection of stylish apparel for men, women, and kids. Enjoy fast shipping and hassle-free returns. elevate your wardrobe today!" />
+    <meta name="keywords" content="merlin, merlinfashion, clothing, trendy, online store, stylish, men's fashion, women's fashion, kids' fashion, shopping, trends, seasonal fashion, affordable fashion, fast shipping" />
+    <meta name="author" content="Salome Gvalia" />
+
+    <!-- Facebook tags -->
+    <meta property="og:title" content="S' beauty corner" />
+    <meta property="og:description" content="explore the latest fashion trends and elevate your style with our curated collection of apparel. From casula to formal wear, shop now for trendy looks and wardrobe essentials, #Fashion #Merlin #Onlineshopping" />
+    <meta property="og:image" content="https://ibb.co/tDLrTR4" />
+    <meta property="og:type" content="website" />
+    <title>Login</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body style="background-color: #ffffff">
+    <!-- navbar -->
+    <header>
+      <div class="logo">
+        <a href="merlin.html" class="logo-name">Merlin Fashion</a>
+      </div>
+
+      <ul class="header-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="contact.html">ContactUs</a></li>
+        <li><a href="login.html" id="login">Login</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </header>
+    <!-- navbar -->
+
+    <div class="login">
+      <img src="images/login-images/login.png" alt="" />
+      <div class="vl"></div>
+      <img
+        src="images/login-images/undraw_empty_cart_co35.png"
+        class="login-image"
+        alt=""
+      />
+    </div>
+    <div class="center">LOGIN HERE 🦄</div>
+
+    <div class="login-form">
+      <input type="text" placeholder="Username Or Email" id="username" />
+      <div class="password-wrapper">
+        <input type="password" placeholder="Password" id="password" />
+        <button id="togglePassword">Show</button>
+      </div>
+
+      <a id="loginBtn"
+        ><button class="login-button" type="button">LOG IN</button></a
+      >
+      <a href="index.html"> <button class="back-button">BACK</button></a>
+    </div>
+
+    <h4 class="other-login-op">Or login with</h4>
+
+    <div class="social">
+      <a href="https://google.com"
+        ><img
+          src="images/icons/icon-google.png"
+          class="other-login-op-img"
+          height="33"
+          width="30"
+          alt="" /></a
+      >&nbsp;&nbsp;
+      <a href="https://facebook.com"
+        ><img
+          src="images/icons/fb.png"
+          class="other-login-op-img"
+          height="30"
+          width="35"
+          alt="" /></a
+      >&nbsp;&nbsp;
+      <a href="https://google.com"
+        ><img
+          src="images/icons/favicon.jpg"
+          class="other-login-op-img"
+          height="32"
+          width="35"
+          alt=""
+      /></a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="js/nav.js"></script>
+    <script type="module">
+      import { checkValidity, login } from "./js/login.js";
+
+      const user = document.getElementById("username");
+      const pass = document.getElementById("password");
+      const btn = document.getElementById("loginBtn");
+      const togglePassword = document.getElementById("togglePassword");
+
+      btn.addEventListener("click", (event) => {
+        if (checkValidity(user, pass)) {
+          login(user, pass);
+        } else {
+          event.preventDefault(); // Prevent form submission
+        }
+      });
+
+      togglePassword.addEventListener("click", () => {
+        if (password.type === "password") {
+          password.type = "text";
+          togglePassword.textContent = "Hide";
+        } else {
+          password.type = "password";
+          togglePassword.textContent = "Show";
+        }
+      });
+    </script>
+  </body>
+</html>
